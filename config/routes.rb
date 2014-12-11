@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  get 'signup'         => 'home#new'
+  get 'account/edit'   => 'home#edit'
+  patch 'account/edit' => 'home#update_account'
+  post 'home'          => 'home#create_session'
+  post 'signup'        => 'home#create_account'
+  delete 'logout'     => 'home#logout'
+
   # You can have the root of your site routed with "root"
   root 'home#home'
 
