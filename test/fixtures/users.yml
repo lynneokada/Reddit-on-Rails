@@ -4,7 +4,7 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-Lynne:
-  name: "Lynne Okada"
-  email: "lynne@makeschool.com"
+lynne:
+  name: Lynne Okada
+  email: lynne@makeschool.com
   password_digest: <%= User.digest("rubyruby") %>
