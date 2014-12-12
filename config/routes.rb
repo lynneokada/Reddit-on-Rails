@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'signup'         => 'users#new'
   get 'account/edit'   => 'home#edit'
   patch 'account/edit' => 'home#update_account'
-  post 'home'          => 'home#create_session'
+  post 'login'         => 'sessions#create_session'
   post 'signup'        => 'users#create'
   delete 'logout'      => 'home#logout'
 

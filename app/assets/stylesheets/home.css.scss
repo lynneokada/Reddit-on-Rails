@@ -3,14 +3,86 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  width: 100%;
+  width: 75%;
+  margin: 0 auto;
   font-family: "Helvetica";
+  font-weight: lighter;
+  color: #DEDEDE;
+  background-color: #222;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
+  width:100%;
   text-align: center;
   font-weight: bold;
-  letter-spacing: 6pt;
   text-transform: uppercase;
 }
 
+h1 {
+  font-size: 30pt;
+  letter-spacing: 9pt;
+}
+
+h2 {
+  font-size: 18pt;
+  font-family: "Courier New";
+  letter-spacing: 4px;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+// form inputs
+
+form {
+  width: 100%;
+
+  input[type="text"], input[type="password"] {
+    display:block;
+    margin: 10px 5% 35px 5%;
+    padding: 0;
+    width: 90%;
+    height: 20pt;
+    border-radius:5px;
+    box-shadow: none;
+    border: 0;
+  }
+
+  input[type="submit"], input[type="button"] {
+    cursor: pointer;
+    display:block;
+    width: 90%;
+    margin: 0 5%;
+    padding: 20px 0;
+    border: 0;
+    font-size: 14pt;
+    font-family: "Courier New";
+    text-transform: uppercase;
+    color: #222;
+    background-color: #DEDEDE;
+    transition: color 0.2s, background-color 0.2s;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #010101;
+      color: #EFEFEF;
+    }
+  }
+
+  label {
+    font-family: "Courier New";
+    font-size: 18pt;
+    margin-left: 5%;
+  }
+}
+
+// debug only
+
+.debug_dump {
+  color: #00FF00;
+  background-color: #010101;
+  padding: 20px;
+  border-radius: 5px;
+  letter-spacing: 1pt;
+  line-height: 14pt;
+  margin: 50px 0;
+}
