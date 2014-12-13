@@ -1,2 +1,7 @@
 <% provide(:title, "reddit: the front page of the internet") %>
 <h1>Welcome to Reddit</h1>
+<%= form_for(@user, url: login_path) do |f| %>
+  <%= f.text_field :email, placeholder: 'email' %>
+  <%= f.text_field :password, placeholder: 'password' %>
+  <%= f.submit "log in" %>
+<% end %>

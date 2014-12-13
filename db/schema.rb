@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211201237) do
+ActiveRecord::Schema.define(version: 20141213224656) do
 
   create_table "users", force: true do |t|
     t.datetime "created_at",      null: false
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141211201237) do
     t.string   "password_digest"
     t.integer  "karma"
     t.string   "name"
+    t.string   "remember_digest"
   end
 
 end
