@@ -5,8 +5,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to user_path(@user.id)
+    if @user.save
+      redirect_to root_url
+    else
+      flash[:danger] = "Invalid inputs"
+    end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @redditposts = @user.redditposts
   end
 
   private
