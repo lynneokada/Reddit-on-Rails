@@ -1,18 +1,17 @@
 Rails.application.routes.draw do
+  root 'home#home'
   get 'users/new'
-
+  #get 'signup'         => 'users#new'
+  get 'account/edit'   => 'home#edit'
+  patch 'account/edit' => 'home#update_account'
+  post 'login'         => 'sessions#create'
+  post 'signup'        => 'users#create'
+  delete 'logout'      => 'home#logout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  get 'signup'         => 'users#new'
-  get 'account/edit'   => 'home#edit'
-  patch 'account/edit' => 'home#update_account'
-  post 'login'         => 'sessions#create_session'
-  post 'signup'        => 'users#create'
-  delete 'logout'      => 'home#logout'
-
   # You can have the root of your site routed with "root"
-  root 'home#home'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -22,7 +21,6 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :users
-
   # Example resource route with options:
   #   resources :products do
   #     member do
