@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
+body 
+{
   width: 75%;
   margin: 0 auto;
   font-family: "Helvetica";
@@ -11,19 +12,22 @@ body {
   background-color: #222;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 
+{
   width:100%;
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-h1 {
+h1 
+{
   font-size: 30pt;
   letter-spacing: 9pt;
 }
 
-h2 {
+h2 
+{
   font-size: 18pt;
   font-family: "Courier New";
   letter-spacing: 4px;
@@ -33,10 +37,12 @@ h2 {
 
 // form inputs
 
-form {
+form 
+{
   width: 100%;
 
-  input[type="text"], input[type="password"] {
+  input[type="text"], input[type="password"] 
+  {
     display:block;
     margin: 10px 5% 35px 5%;
     padding: 5px 10px;
@@ -48,7 +54,8 @@ form {
     font-size: 12pt;
   }
 
-  input[type="submit"], input[type="button"] {
+  input[type="submit"], input[type="button"] 
+  {
     cursor: pointer;
     display:block;
     width: 90%;
@@ -63,13 +70,15 @@ form {
     transition: color 0.2s, background-color 0.2s;
     border-radius: 5px;
 
-    &:hover {
+    &:hover 
+    {
       background-color: #010101;
       color: #EFEFEF;
     }
   }
 
-  label {
+  label 
+  {
     font-family: "Courier New";
     font-size: 18pt;
     margin-left: 5%;
@@ -78,7 +87,8 @@ form {
 
 // debug only
 
-.debug_dump {
+.debug_dump 
+{
   color: #00FF00;
   background-color: #010101;
   padding: 20px;
