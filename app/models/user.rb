@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
+  # relationships
+  has_many :redditposts, dependent: :destroy
 
   # validations
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
