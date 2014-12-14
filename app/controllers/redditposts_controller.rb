@@ -1,0 +1,2 @@
+class RedditpostsController < ApplicationController
+end
