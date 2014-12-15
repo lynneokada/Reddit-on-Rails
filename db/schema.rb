@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215221717) do
+ActiveRecord::Schema.define(version: 20141215233657) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -39,5 +39,16 @@ ActiveRecord::Schema.define(version: 20141215221717) do
     t.string   "name"
     t.string   "remember_digest"
   end
+
+  create_table "votes", force: true do |t|
+    t.boolean  "up"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.integer  "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "votes", ["user_id", "comment_id", "post_id"], name: "index_votes_on_user_id_and_comment_id_and_post_id"
 
 end
