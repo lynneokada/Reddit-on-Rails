@@ -24,8 +24,6 @@ class User < ActiveRecord::Base
     return SecureRandom.urlsafe_base64
   end
 
-  def
-
   # instance methods
 
   # Remembers a user in the database for use in persistent sessions.
