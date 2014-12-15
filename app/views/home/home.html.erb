@@ -7,11 +7,11 @@
 
 <% unless logged_in? %>
   <%= form_for(:session, url: login_path) do |f| %>
-    
+
     <%= f.text_field :email, placeholder: 'email' %>
-    
+
     <%= f.password_field :password, placeholder: 'password' %>
-		
+
 		<%= f.label :remember_me, class: "checkbox inline" do %>
     	<%= f.check_box :remember_me %>
     	<span>Remember me on this computer</span>
@@ -19,16 +19,13 @@
 
     <%= f.submit "log in" %>
 
-    
-
   <% end %>
 <% else %>
   <section class="redditpost_form">
     <%= render 'shared/redditpost_form' %>
+    <ol class="microposts">
+      <%= render Redditpost.all %>
+    </ol>
   </section>
-<<<<<<< HEAD
-  
+
 <% end %>
-=======
-<% end %>
->>>>>>> c6f9ec01fb881df5d660d7f813f5a5fca0018e5b
