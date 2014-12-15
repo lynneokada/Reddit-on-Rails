@@ -1,2 +1,13 @@
-
-<li>hi</li>
+<li id="redditpost-<%= redditpost.id %>">
+  <span class="user"><%= link_to redditpost.user.name, redditpost.user %></span>
+  <span class="content">
+    <%= redditpost.content %>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(redditpost.created_at) %> ago.
+    <% if current_user?(redditpost.user) %>
+    <%= link_to "delete", redditpost, method: :delete,
+    data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </span>
+</li>
