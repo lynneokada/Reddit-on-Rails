@@ -111,10 +111,26 @@ form {
 // flash
 
 .alert {
+  font-family: "Courier New";
   display:block;
   margin: 50px 0;
-  width:100%;
-  font-size: 24pt;
+  color: #00FF00;
+  background-color: #010101;
+  padding: 20px;
+  border-radius: 5px;
+  letter-spacing: 1pt;
+  line-height: 14pt;
+  margin: 50px 0;
+}
+
+.alert-danger {
   color: #FF0000;
-  text-align:center;
+}
+
+.alert-success {
+  color: #00EE00;
+}
+
+.alert-warning {
+  color: #EEEE00;
 }
