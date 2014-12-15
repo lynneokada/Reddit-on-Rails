@@ -1,6 +1,8 @@
 class Redditpost < ActiveRecord::Base
   # relationships
   belongs_to :user
+  has_many :comments, dependent: :destroy
+  has_many :votes, as: :votable, dependent: :destroy
 
   default_scope -> { order(created_at: :desc) }
 
