@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home#home'
   get 'users/new'
-  #get 'signup'         => 'users#new'
+  get 'signup'         => 'users#new'
   get 'account/edit'   => 'home#edit'
   patch 'account/edit' => 'home#update_account'
   post 'login'         => 'sessions#create'
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete 'logout'      => 'home#logout'
 
   resources :users
-  resources :redditposts
+  resources :redditposts, only: [:create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

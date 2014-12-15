@@ -1,0 +1,6 @@
+<%= form_for(@redditpost, html: { multipart: true}) do |f| %>
+<div class="field" >
+  <%= f.text_area :content, placeholder: "Create new redditpost..." %>
+</div>
+<%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

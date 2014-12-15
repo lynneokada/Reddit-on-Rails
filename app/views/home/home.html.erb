@@ -6,4 +6,8 @@
     <%= f.password_field :password, placeholder: 'password' %>
     <%= f.submit "log in" %>
   <% end %>
+<% else %>
+  <section class="redditpost_form">
+    <%= render 'shared/redditpost_form' %>
+  </section>
 <% end %>
