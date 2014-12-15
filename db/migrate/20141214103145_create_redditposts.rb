@@ -1,6 +1,7 @@
 class CreateRedditposts < ActiveRecord::Migration
   def change
     create_table :redditposts do |t|
+      t.string :title
       t.string :content
       t.integer :user_id
 

@@ -19,7 +19,7 @@ before_action :logged_in_user, only: [:create, :destroy]
   private
 
     def redditpost_params
-      params.require(:redditpost).permit(:content)
+      params.require(:redditpost).permit(:content, :title)
     end
 
     def correct_user
