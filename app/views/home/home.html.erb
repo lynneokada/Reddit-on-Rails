@@ -14,7 +14,7 @@
 
 		<%= f.label :remember_me, class: "checkbox inline" do %>
     	<%= f.check_box :remember_me %>
-    	<span id="remember_me">Remember me on this computer</span>
+    	<span>Remember me on this computer</span>
     <% end %>
 
     <%= f.submit "log in" %>
@@ -23,13 +23,8 @@
 <% else %>
   <section class="redditpost_form">
     <%= render 'shared/redditpost_form' %>
-    <ol class="microposts">
-      <%= render Redditpost.all %>
-    </ol>
   </section>
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> a0481d1c86aec240acd5ca7a2c207ec5264d5381
+  <ol class="microposts">
+    <%= render Redditpost.all %>
+  </ol>
 <% end %>
