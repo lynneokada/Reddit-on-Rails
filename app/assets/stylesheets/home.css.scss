@@ -49,7 +49,8 @@ form {
     font-size: 12pt;
   }
 
-  input[type="submit"], input[type="button"] {
+  input[type="submit"], input[type="button"] 
+  {
     cursor: pointer;
     display:block;
     width: 500px;
@@ -64,7 +65,8 @@ form {
     transition: color 0.2s, background-color 0.2s;
     border-radius: 5px;
 
-    &:hover {
+    &:hover 
+    {
       background-color: #010101;
       color: #EFEFEF;
     }
@@ -79,6 +81,19 @@ form {
     text-align:left;
     padding-left: 0;
   }
+}
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }
 
 // debug only
