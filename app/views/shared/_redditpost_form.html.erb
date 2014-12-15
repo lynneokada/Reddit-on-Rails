@@ -1,0 +1,7 @@
+<%= form_for @redditpost do |f| %>
+  <%= render 'shared/error_message', object: f.object %>
+  <div class="field" >
+    <%= f.text_field :content, placeholder: "Create new redditpost..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

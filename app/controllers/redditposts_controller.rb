@@ -8,6 +8,7 @@ before_action :logged_in_user, only: [:create, :destroy]
       redirect_to root_url
     else
       #do some other stuff
+      @feed_items = []
     end
   end
 
