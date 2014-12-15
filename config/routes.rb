@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   patch 'account/edit' => 'home#update_account'
   post 'login'         => 'sessions#create'
   post 'signup'        => 'users#create'
-  delete 'logout'      => 'home#logout'
+  delete 'logout'      => 'sessions#destroy'
 
   resources :users
   resources :redditposts, only: [:create, :destroy]
