@@ -7,8 +7,9 @@ before_action :logged_in_user, only: [:create, :destroy]
       flash[:success] = "Redditpost created!"
       redirect_to root_url
     else
-      #do some other stuff
+      flash[:warning] = "invalid inputs."
       @feed_items = []
+      redirect_to root_url
     end
   end
 
