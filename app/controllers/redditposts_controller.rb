@@ -23,7 +23,7 @@ before_action :logged_in_user, only: [:create, :destroy]
     end
 
     def correct_user
-      @redditpost = current_user.redditposts.find_by(:id params[:id])
+      @redditpost = current_user.redditposts.find_by(id: params[:id])
       redirect_to root_url if @redditpost.nil
     end
 
