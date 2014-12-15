@@ -1,9 +1,9 @@
 <% provide(:title, "reddit: the front page of the internet") %>
 <h1>Welcome to 4chan</h1>
 <h2>top kek</h2>
-<a href="/signup">Sign Up</a>
 
-<a href="/logout">Log out</a>
+<%= link_to "Sign up", signup_path %>
+<%= link_to "Log out", logout_path, method: :delete %>
 
 <% unless logged_in? %>
   <%= form_for(:session, url: login_path) do |f| %>
@@ -14,7 +14,7 @@
 
 		<%= f.label :remember_me, class: "checkbox inline" do %>
     	<%= f.check_box :remember_me %>
-    	<span>Remember me on this computer</span>
+    	<span id="remember_me">Remember me on this computer</span>
     <% end %>
 
     <%= f.submit "log in" %>
@@ -27,5 +27,9 @@
       <%= render Redditpost.all %>
     </ol>
   </section>
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> a0481d1c86aec240acd5ca7a2c207ec5264d5381
 <% end %>
