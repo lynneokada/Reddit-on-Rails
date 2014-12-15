@@ -10,9 +10,9 @@ class SessionsController < ApplicationController
       redirect_to root_url
     else
       # show login error using flash
-      message  = "Account not activated. "
-      message += "Check your email for the activation link."
-      flash[:warning] = message
+      # message  = "Account not activated. "
+      # message += "Check your email for the activation link."
+      # flash[:warning] = message
       redirect_to root_url
     end
   end
