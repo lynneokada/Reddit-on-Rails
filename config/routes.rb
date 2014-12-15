@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home#home'
   get 'users/new'
-  #get 'signup'         => 'users#new'
+  get 'signup'         => 'users#new'
   get 'account/edit'   => 'home#edit'
   patch 'account/edit' => 'home#update_account'
   post 'login'         => 'sessions#create'

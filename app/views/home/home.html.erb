@@ -1,9 +1,30 @@
 <% provide(:title, "reddit: the front page of the internet") %>
-<h1>Welcome to Reddit</h1>
+<h1>Welcome to 4chan</h1>
+<h2>top kek</h2>
+<a href="/signup">Sign Up</a>
+
+<a href="/logout">Log out</a>
+
 <% unless logged_in? %>
   <%= form_for(:session, url: login_path) do |f| %>
+    
     <%= f.text_field :email, placeholder: 'email' %>
+    
     <%= f.password_field :password, placeholder: 'password' %>
+		
+		<%= f.label :remember_me, class: "checkbox inline" do %>
+    	<%= f.check_box :remember_me %>
+    	<span>Remember me on this computer</span>
+    <% end %>
+
     <%= f.submit "log in" %>
+
+    
+
   <% end %>
+<% else %>
+  <section class="redditpost_form">
+    <%= render 'shared/redditpost_form' %>
+  </section>
+  
 <% end %>
