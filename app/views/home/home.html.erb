@@ -2,8 +2,11 @@
 <h1>Welcome to 4chan</h1>
 <h2>top kek</h2>
 
-<%= link_to "Sign up", signup_path %>
-<%= link_to "Log out", logout_path, method: :delete %>
+<% if logged_in? %>
+  <%= link_to "Log out", logout_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign up", signup_path %>
+<% end %>
 
 <% unless logged_in? %>
   <%= form_for(:session, url: login_path) do |f| %>
