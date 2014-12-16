@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   root 'home#home'
   get 'users/new'
-  get 'signup'         => 'users#new'
-  get 'account/edit'   => 'home#edit'
-  patch 'account/edit' => 'home#update_account'
-  post 'login'         => 'sessions#create'
-  post 'signup'        => 'users#create'
-  delete 'logout'      => 'sessions#destroy'
+  get 'signup'          => 'users#new'
+  get 'account/edit'    => 'home#edit'
+  get 'redditposts/:id' => 'redditposts#show'
+  patch 'account/edit'  => 'home#update_account'
+  post 'login'          => 'sessions#create'
+  post 'signup'         => 'users#create'
+  delete 'logout'       => 'sessions#destroy'
 
   resources :users
   resources :redditposts, only: [:create, :destroy]
