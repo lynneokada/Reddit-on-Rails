@@ -4,8 +4,8 @@
     <%= link_to redditpost.title, redditpost.content %>
   </span>
   <span class="comment">
-    <%= pluralize( @redditpost.comments.count, 'comment') %>
-    <!-- <%= link_to , redditpost, method: :show %> -->
+    <% comment_link_text = pluralize( @redditpost.comments.count, 'comment') + " "%>
+    <%= link_to comment_link_text, redditpost %>
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(redditpost.created_at) %> ago.
