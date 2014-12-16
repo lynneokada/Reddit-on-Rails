@@ -1,4 +1,4 @@
-<li id="redditpost-<%= redditpost.id %>">
+<section id="redditpost-<%= redditpost.id %>">
   <span class="user"><%= link_to redditpost.user.name, redditpost.user %></span>
   <span class="content">
     <%= link_to redditpost.title, redditpost.content %>
@@ -13,4 +13,4 @@
     <%= link_to "delete", redditpost, method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
   </span>
-</li>
+</section>
