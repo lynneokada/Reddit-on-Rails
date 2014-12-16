@@ -11,14 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141215233657) do
+=======
+ActiveRecord::Schema.define(version: 20141216191352) do
+>>>>>>> 9e8cb5c85ff0bf11a0296f075aee50714e7e0550
 
   create_table "comments", force: true do |t|
     t.text     "body"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "redditpost_id"
+    t.integer  "score"
   end
+
+  add_index "comments", ["redditpost_id", "score"], name: "index_comments_on_redditpost_id_and_score"
 
   create_table "redditposts", force: true do |t|
     t.string   "title"
