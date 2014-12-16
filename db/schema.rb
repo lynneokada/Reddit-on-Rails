@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141216191352) do
+ActiveRecord::Schema.define(version: 20141216202028) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20141216191352) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "comment_id"
   end
 
   add_index "redditposts", ["user_id", "created_at"], name: "index_redditposts_on_user_id_and_created_at"
@@ -48,12 +47,12 @@ ActiveRecord::Schema.define(version: 20141216191352) do
   create_table "votes", force: true do |t|
     t.boolean  "up"
     t.integer  "user_id"
-    t.integer  "post_id"
-    t.integer  "comment_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "votable_id"
+    t.string   "votable_type"
   end
 
-  add_index "votes", ["user_id", "comment_id", "post_id"], name: "index_votes_on_user_id_and_comment_id_and_post_id"
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id_and_comment_id_and_post_id"
 
 end
