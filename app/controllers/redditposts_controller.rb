@@ -14,7 +14,10 @@ before_action :logged_in_user, only: [:create, :destroy]
   end
 
   def destroy
-
+    @redditpost = Redditpost.find(params[:id])
+    @redditpost.destroy
+    flash[:success] = "Redditpost deleted!"
+    redirect_to request.referrer || root_url
   end
 
   def show
