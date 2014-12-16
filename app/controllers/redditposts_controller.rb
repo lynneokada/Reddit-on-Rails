@@ -25,6 +25,10 @@ before_action :logged_in_user, only: [:create, :destroy]
     @comments = @redditpost.comments
   end
 
+  def add_comment
+
+  end
+
   private
 
     def redditpost_params
