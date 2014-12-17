@@ -13,4 +13,15 @@
     <%= link_to "delete", redditpost, method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
   </span>
+  <% upvote = redditpost.votes.build(votable_id: redditpost.id,
+                                     votable_type: redditpost,
+                                     user_id: current_user.id,
+                                     up: true) %>
+  <% downvote = redditpost.votes.build(votable_id: redditpost.id,
+                                     votable_type: redditpost,
+                                     user_id: current_user.id,
+                                     up: false) %>
+<%= render upvote %>
+<%= render downvote %>
+
 </section>

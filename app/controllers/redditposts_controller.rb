@@ -39,5 +39,4 @@ before_action :logged_in_user, only: [:create, :destroy]
       @redditpost = current_user.redditposts.find_by(id: params[:id])
       redirect_to root_url if @redditpost.nil
     end
-
 end

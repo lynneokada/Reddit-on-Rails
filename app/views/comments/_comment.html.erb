@@ -2,5 +2,6 @@
   <%= link_to comment.user.name, comment.user %>
   <p>
     <%= comment.body %>
+    <% comment.votes.build %>
   </p>
 </section>

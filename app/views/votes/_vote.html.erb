@@ -1,0 +1,7 @@
+<%= form_for @vote do |f| %>
+  <% if @vote.up == true %>
+    <%= f.submit "^", class: "btn btn-primary" %>
+  <% elsif @vote.up == false %>
+    <% f.submit "v", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
