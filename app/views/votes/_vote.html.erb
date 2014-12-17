@@ -1,7 +1,11 @@
-<%= form_for @vote do |f| %>
-  <% if @vote.up == true %>
+<%= form_for vote do |f| %>
+  <%= hidden_field_tag :user_id, current_user.id %>
+  <%= hidden_field_tag :votable_id, vote.votable_id %>
+  <%= hidden_field_tag :votable_type, vote.votable_type %>
+  <%= hidden_field_tag :up, vote.up %>
+  <% if vote.up == true %>
     <%= f.submit "^", class: "btn btn-primary" %>
-  <% elsif @vote.up == false %>
-    <% f.submit "v", class: "btn btn-primary" %>
+  <% elsif vote.up == false %>
+    <%= f.submit "v", class: "btn btn-primary" %>
   <% end %>
 <% end %>

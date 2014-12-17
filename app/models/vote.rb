@@ -17,6 +17,10 @@ class Vote < ActiveRecord::Base
   validates :up, presence: true
   validates :votable_id, presence: true
   validates :votable_type, presence: true
+<<<<<<< HEAD
 
 
+=======
+  validates :user_id, uniqueness: {scope: [:votable_type, :votable_id]}
+>>>>>>> 51e518b58fe1206269a97252ec586bc6aabccb7e
 end
