@@ -9,9 +9,9 @@ class VotesController < ApplicationController
   end
 
 
-  def post 
+  def post
 
-  end	
+  end
 
   private
 
