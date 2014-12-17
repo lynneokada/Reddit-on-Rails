@@ -1,2 +1,5 @@
 module VotesHelper
+
+
+	
 end
