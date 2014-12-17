@@ -16,7 +16,7 @@ class VotesController < ApplicationController
   private
 
   def votable_params(params_object = params[:voteType])
-    params_object.permit(:votable_id, :votable_type, :user_id, )
+    params_object.permit(:votable_id, :votable_type, :user_id)
   end
 
 end

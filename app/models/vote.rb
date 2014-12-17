@@ -4,6 +4,8 @@
 
 class Vote < ActiveRecord::Base
 
+	attr_accessible :votable_id, :votable_type, :user_id
+
 
   belongs_to :user
   belongs_to :comment
@@ -15,7 +17,6 @@ class Vote < ActiveRecord::Base
   validates :up, presence: true
   validates :votable_id, presence: true
   validates :votable_type, presence: true
-  
-  
-  
+
+
 end
