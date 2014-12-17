@@ -7,7 +7,7 @@ class Redditpost < ActiveRecord::Base
   default_scope -> { order(created_at: :desc) }
 
   # validations
-  VALID_URL_REGEX = /^(http(?:s)?\:\/\/[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*\.[a-zA-Z]{2,6}\/(.)*)/
+  VALID_URL_REGEX = /\A(http(?:s)?\:\/\/[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*\.[a-zA-Z]{2,6}\/(.)*)\z/
 
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 255 }
