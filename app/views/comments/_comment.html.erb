@@ -1,4 +1,16 @@
 <section>
+  <span class="vote">
+    <% upvote = redditpost.votes.build(votable_id: redditpost.id,
+    votable_type: redditpost,
+    user_id: current_user.id,
+    up: true) %>
+    <% downvote = redditpost.votes.build(votable_id: redditpost.id,
+    votable_type: redditpost,
+    user_id: current_user.id,
+    up: false) %>
+    <%= render upvote %>
+    <%= render downvote %>
+  </span>
   <%= link_to comment.user.name, comment.user %>
   <p>
     <%= comment.body %>
