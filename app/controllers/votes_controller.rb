@@ -1,11 +1,7 @@
 class VotesController < ApplicationController
 
   def create
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 51e518b58fe1206269a97252ec586bc6aabccb7e
   end
 
   def destroy
