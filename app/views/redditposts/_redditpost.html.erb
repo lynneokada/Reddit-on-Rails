@@ -1,10 +1,10 @@
-<li id="redditpost-<%= redditpost.id %>">
+<section id="redditpost-<%= redditpost.id %>">
   <span class="user"><%= link_to redditpost.user.name, redditpost.user %></span>
   <span class="content">
     <%= link_to redditpost.title, redditpost.content %>
   </span>
   <span class="comment">
-    <% comment_link_text = pluralize( @redditpost.comments.count, 'comment') + " "%>
+    <% comment_link_text = pluralize( redditpost.comments.count, 'comment') + " "%>
     <%= link_to comment_link_text, redditpost %>
   </span>
   <span class="timestamp">
@@ -13,4 +13,4 @@
     <%= link_to "delete", redditpost, method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
   </span>
-</li>
+</section>

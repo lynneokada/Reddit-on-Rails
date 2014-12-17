@@ -14,6 +14,7 @@ before_action :logged_in_user, only: [:create, :destroy]
   end
 
   def destroy
+    @redditpost = Redditpost.find(params[:id])
     @redditpost.destroy
     flash[:success] = "Redditpost deleted!"
     redirect_to request.referrer || root_url
@@ -22,7 +23,10 @@ before_action :logged_in_user, only: [:create, :destroy]
   def show
     @redditpost = Redditpost.find(params[:id])
     @comments = @redditpost.comments
-    byebug
+  end
+
+  def add_comment
+
   end
 
   private

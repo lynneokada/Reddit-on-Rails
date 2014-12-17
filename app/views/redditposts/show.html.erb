@@ -1,7 +1,10 @@
-<div class="row">
-  <aside class="col-md-4">
-    <section>
-      <%= link_to @redditpost.title, @redditpost.content %>
-    </section>
-  </aside>
-</div>
+<section>
+  <%= render @redditpost %>
+  <% if logged_in? %>
+    <%= form_for :comment, url: {controller: :comments, action: :new} do |f| %>
+      <%= f.text_area :content, placeholder: "Post a new comment" %>
+      <%= f.submit "Post comment" %>
+    <% end %>
+  <% end %>
+  <%= render @redditpost.comments %>
+</section>
