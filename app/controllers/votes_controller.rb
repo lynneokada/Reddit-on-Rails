@@ -7,4 +7,10 @@ class VotesController < ApplicationController
   def destroy
 
   end
+
+  private
+
+    def current_redditpost
+      Redditpost.find(params[:id])
+    end
 end

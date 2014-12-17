@@ -1,0 +1,7 @@
+<% unless current_user?(@user) %>
+<div id="vote_form">
+  <%= render 'upvote' %>
+  <%= render 'downvote' %>
+  <% end %>
+</div>
+<% end %>

@@ -1,4 +1,5 @@
 <section id="redditpost-<%= redditpost.id %>">
+  <span class="vote"><%= render "redditposts/vote_form" %>
   <span class="user"><%= link_to redditpost.user.name, redditpost.user %></span>
   <span class="content">
     <%= link_to redditpost.title, redditpost.content %>
