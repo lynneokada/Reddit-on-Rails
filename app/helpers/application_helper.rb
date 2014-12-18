@@ -10,6 +10,7 @@ module ApplicationHelper
 
   def sort_score_for_votable(votable)
     votable.sorting_score = score_for_votable(votable.score, votable.created_at)
+    votable.save
   end
 
   def update_all_sorting_scores
