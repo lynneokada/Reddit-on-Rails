@@ -1,0 +1,7 @@
+morgante:
+  id: 1
+  title: "morgante"
+  content: "http://morgante.com/"
+  user_id: 1
+  created_at: <%= 1.hour.ago %>
+  score: 15
