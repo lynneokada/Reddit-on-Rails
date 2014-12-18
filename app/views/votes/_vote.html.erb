@@ -4,8 +4,8 @@
   <%= hidden_field_tag :votable_type, vote.votable_type %>
   <%= hidden_field_tag :up, vote.up %>
   <% if vote.up == true %>
-    <%= f.submit "↑", class: "btn btn-primary" %>
+    <%= f.submit "↑", class: "vote_buttons" %>
   <% elsif vote.up == false %>
-    <%= f.submit "↓", class: "btn btn-primary" %>
+    <%= f.submit "↓", class: "vote_buttons" %>
   <% end %>
 <% end %>
