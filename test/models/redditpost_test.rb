@@ -26,14 +26,12 @@ class RedditpostTest < ActiveSupport::TestCase
   end
 
   test "should sort redditpost by scoring order" do
-    # byebug
     update_all_sorting_scores
     ordered_by_sorting_score = Redditpost.order(sorting_score: :DESC)
-    ordered_by_date = Redditpost.order(created_at: :DESC)
-    length = ordered_by_date.count-1
-    # byebug
+    ordered_by_score = Redditpost.order(score: :DESC)
+    length = ordered_by_score.count-1
     (0..length).each do |i|
-      assert ordered_by_sorting_score[i].title == ordered_by_date[i].title
+      assert ordered_by_sorting_score[i].title == ordered_by_score[i].title
     end
     # assert_equal(ordered_by_date, ordered_by_sorting_score, "sorting post score failed")
   end
