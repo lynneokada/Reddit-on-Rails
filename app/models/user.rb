@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # relationships
   has_many :redditposts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :votes, dependent: :destroy
 
   # validations
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

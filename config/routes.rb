@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   post 'login'                  => 'sessions#create'
   post 'signup'                 => 'users#create'
   post 'redditpost/:id/comment' => 'comments#new'
-  post 'vote'                   => 'vote#new'
 
   delete 'logout'               => 'sessions#destroy'
 
