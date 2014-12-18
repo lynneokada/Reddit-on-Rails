@@ -1,6 +1,7 @@
 class Redditpost < ActiveRecord::Base
   # relationships
   belongs_to :user
+  belongs_to :subreddit
   has_many :comments, dependent: :destroy
   has_many :votes, as: :votable, dependent: :destroy
 
