@@ -2,7 +2,6 @@ class Vote < ActiveRecord::Base
 
 	#attr_accessible :votable_id, :votable_type, :user_id
 
-
   belongs_to :user
   belongs_to :comment
   belongs_to :votable, polymorphic: true
