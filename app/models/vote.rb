@@ -1,7 +1,3 @@
-#reguire
-
-#module
-
 class Vote < ActiveRecord::Base
 
 	#attr_accessible :votable_id, :votable_type, :user_id

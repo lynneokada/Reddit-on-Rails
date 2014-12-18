@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218002109) do
+ActiveRecord::Schema.define(version: 20141218185922) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141218002109) do
     t.datetime "updated_at",    null: false
     t.integer  "redditpost_id"
     t.integer  "score"
+    t.float    "sorting_score"
   end
 
   add_index "comments", ["redditpost_id", "score"], name: "index_comments_on_redditpost_id_and_score"
@@ -28,8 +29,9 @@ ActiveRecord::Schema.define(version: 20141218002109) do
     t.string   "title"
     t.string   "content"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.float    "sorting_score"
   end
 
   add_index "redditposts", ["user_id", "created_at"], name: "index_redditposts_on_user_id_and_created_at"
