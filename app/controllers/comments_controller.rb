@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  def new
+  def create
     comment = current_redditpost.comments.build(user_id: current_user.id, body: params[:comment][:content])
     comment.save
     redirect_to current_redditpost
