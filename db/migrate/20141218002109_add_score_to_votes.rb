@@ -1,5 +1,6 @@
 class AddScoreToVotes < ActiveRecord::Migration
   def change
-    add_column :votes, :score, :integer
+    # don't do this
+    # add_column :votes, :score, :integer
   end
 end
