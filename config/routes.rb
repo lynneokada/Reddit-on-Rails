@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   post 'login'                  => 'sessions#create'
   post 'signup'                 => 'users#create'
-  post 'redditpost/:id/comment' => 'comments#new'
+  post 'redditpost/:id/comment' => 'comments#create'
   post 'subreddits/create'      => 'subreddits#create'
 
   delete 'logout'               => 'sessions#destroy'
