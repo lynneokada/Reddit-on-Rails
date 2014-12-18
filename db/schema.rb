@@ -10,6 +10,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
+
 ActiveRecord::Schema.define(version: 20141218224910) do
 
   create_table "comments", force: true do |t|
@@ -40,10 +41,7 @@ ActiveRecord::Schema.define(version: 20141218224910) do
   create_table "subreddits", force: true do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-=======
     t.string   "name"
->>>>>>> 8ed705ef3d520187be9be88215bd0a6238fd3702
   end
 
   create_table "users", force: true do |t|
