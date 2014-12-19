@@ -1,8 +1,8 @@
-<%= form_for(@subreddit) do |f| %>
+<%= form_for(subreddit) do |f| %>
   <%= render 'shared/error_messages', f.object %>
 
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
 
-  <%= f.submit "Create new subreddit" %>
+  <%= f.submit "Create new subreddit", class: "btn btn-primary" %>
 <% end %>
