@@ -13,6 +13,7 @@ class Redditpost < ActiveRecord::Base
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 255 }
   validates :content, presence: true, length: { maximum: 255 }, format: {with: VALID_URL_REGEX}
+  validates :score, presence: true
 
   def total_votes
     upvotes = self.votes.where(up: true).count
