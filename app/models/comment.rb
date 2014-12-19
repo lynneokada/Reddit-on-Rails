@@ -6,4 +6,5 @@ class Comment < ActiveRecord::Base
   validates :redditpost_id, presence: true
   validates :body, presence: true           # actual reddit allows blank comments
   validates :user_id, presence: true
+  validates :score, presence: true
 end
