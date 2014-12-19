@@ -21,8 +21,11 @@ password_confirmation: "example")
 end
 
 # Redditposts
-users = User.order(:created_at).take(6)
-50.times do
-  content = Faker::Lorem.sentences(5)
-  users.each { |user| user.microposts.create!(content: content) }
+users = User.all
+50.times do |n|
+  title = "outside? #{n} wow i got high score?"
+  content = "http://www.reddit.com/r/outside"
+  redditpost = users.sample.redditposts.create(content: content, title: title)
+  redditpost.score = 0
+  redditpost.save
 end
