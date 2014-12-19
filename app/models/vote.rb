@@ -13,4 +13,8 @@ class Vote < ActiveRecord::Base
   validates :votable_type, presence: true
 
   validates :user_id, uniqueness: {scope: [:votable_type, :votable_id]}
+
+  def unvote(votable)
+    
+  end
 end

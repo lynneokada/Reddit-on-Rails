@@ -15,10 +15,15 @@ class Redditpost < ActiveRecord::Base
   validates :content, presence: true, length: { maximum: 255 }, format: {with: VALID_URL_REGEX}
   validates :score, presence: true
 
+  def update_score
+    self.score = self.total_votes
+    self.save
+    # sort_score_for_votable(self)
+  end
+
   def total_votes
     upvotes = self.votes.where(up: true).count
     downvotes = self.votes.where(up: false).count
     return upvotes - downvotes
   end
-
-end
+  end
