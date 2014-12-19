@@ -8,7 +8,6 @@ class Vote < ActiveRecord::Base
   scope :up, lambda{ where(:vote_flag => true) }
   scope :down, lambda{ where(:vote_flag => false) }
 
-  validates :up, presence: true
   validates :votable_id, presence: true
   validates :votable_type, presence: true
 
