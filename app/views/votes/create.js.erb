@@ -1,0 +1,2 @@
+$("#vote").html("<%= escape_javascript(render('shared/votable')) %>")
+$("#votes").html('<%= @vote.score.count %>')
