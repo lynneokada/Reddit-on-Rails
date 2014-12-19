@@ -1,0 +1,21 @@
+<% if votable.is_a? Redditpost %>
+  <% upvote = votable.votes.build(votable_id: votable.id,
+                                  votable_type: :redditpost,
+                                  user_id: current_user.id,
+                                  up: true) %>
+  <% downvote = votable.votes.build(votable_id: votable.id,
+                                    votable_type: :redditpost,
+                                    user_id: current_user.id,
+                                    up: false) %>
+<% else %>
+  <% upvote = votable.votes.build(votable_id: votable.id,
+                                  votable_type: :comment,
+                                  user_id: current_user.id,
+                                  up: true) %>
+  <% downvote = votable.votes.build(votable_id: votable.id,
+                                    votable_type: :comment,
+                                    user_id: current_user.id,
+                                    up: false) %>
+<% end %>
+<%= render upvote %>
+<%= render downvote %>

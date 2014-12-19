@@ -1,15 +1,6 @@
 <section>
   <span class="vote">
-    <% upvote = comment.votes.build(votable_id: comment.id,
-                                    votable_type: :comment,
-                                    user_id: current_user.id,
-                                    up: true) %>
-    <% downvote = comment.votes.build(votable_id: comment.id,
-                                      votable_type: :comment,
-                                      user_id: current_user.id,
-                                      up: false) %>
-    <%= render upvote %>
-    <%= render downvote %>
+    <%= render partial: "shared/votable", object: comment %>
   </span>
   <%= link_to comment.user.name, comment.user %>
   <p>
