@@ -6,16 +6,16 @@
     <%= render partial: "shared/votable", object: redditpost %>
   </span>
   <span class="redditpost_body">
-    <span class="user"><%= link_to redditpost.user.name, redditpost.user %></span>
     <span class="content">
       <%= link_to redditpost.title, redditpost.content %>
     </span>
+    <span class="user">| <%= link_to redditpost.user.name, redditpost.user %></span>
     <span class="comment">
-      <% comment_link_text = pluralize( redditpost.comments.count, 'comment') + " "%>
-      <%= link_to comment_link_text, redditpost %>
+      <% comment_link_text = pluralize( redditpost.comments.count, 'comment') %>
+      <%= link_to comment_link_text, redditpost %> 
     </span>
     <span class="timestamp">
-      Posted <%= time_ago_in_words(redditpost.created_at) %> ago.
+      posted <%= time_ago_in_words(redditpost.created_at) %> ago.
       <% if current_user?(redditpost.user) %>
       <%= link_to "delete", redditpost, method: :delete, data: { confirm: "Are you sure?" } %>
       <% end %>
