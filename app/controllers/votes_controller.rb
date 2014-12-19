@@ -8,8 +8,16 @@ class VotesController < ApplicationController
                                     up: params[:up])
 
     @vote.save
-    @redditpost = Redditpost.find(@vote.votable_id)
-    @redditpost.update_score
+    if @vote.votable_type = :redditpost
+      @votable = Redditpost.find(@vote.votable_id)
+      @votable.update_score
+    else
+      @votable = Comment.find(@vote.votable_id)
+      @votable.update_score
+    end
+    if !@votable
+      raise "redditpost or comment cannot be nil"
+    end
     respond_to do |format|
       format.html { redirect_to root_url }
       format.js

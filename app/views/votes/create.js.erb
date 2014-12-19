@@ -1,8 +1,8 @@
 
-if ("<%= @vote.votable_type %>" === "Redditpost") {
+<% if @votable.is_a? Redditpost %>
   // redditpost
-  $("#redditpost_<%= @vote.votable_id %>").find(".score").text("<%= @redditpost.score %>");
-} else {
+  $("#redditpost_<%= @vote.votable_id %>").find(".score").text("<%= @votable.score %>");
+<% else %>
   // comment
-  $("#comment_<%= @vote.votable_id %>").find(".score").text("<%= @comment.score %>")
-}
+  $("#comment_<%= @vote.votable_id %>").find(".score").text("<%= @votable.score %>")
+<% end %>
