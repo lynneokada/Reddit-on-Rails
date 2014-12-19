@@ -3,6 +3,7 @@ before_action :logged_in_user, only: [:create, :destroy]
 
   def create
     @redditpost = current_user.redditposts.build(redditpost_params)
+    @redditpost.score = 0
     if @redditpost.save
       flash[:success] = "Post created!"
       redirect_to root_url
