@@ -1,2 +1,8 @@
-$("#vote").html("<%= escape_javascript(render('shared/votable')) %>")
-$("#votes").html('<%= @vote.score.count %>')
+
+if ("<%= @vote.votable_type %>" === "Redditpost") {
+  // redditpost
+  $("#redditpost_<%= @vote.votable_id %>").find(".score").text("<%= @redditpost.score %>");
+} else {
+  // comment
+  $("#comment_<%= @vote.votable_id %>").find(".score").text("<%= @comment.score %>")
+}
