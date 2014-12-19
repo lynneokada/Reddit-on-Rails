@@ -1,15 +1,6 @@
 <section id="redditpost-<%= redditpost.id %>">
   <span class="vote">
-    <% upvote = redditpost.votes.build(votable_id: redditpost.id,
-                                       votable_type: :redditpost,
-                                       user_id: current_user.id,
-                                       up: true) %>
-    <% downvote = redditpost.votes.build(votable_id: redditpost.id,
-                                         votable_type: :redditpost,
-                                         user_id: current_user.id,
-                                         up: false) %>
-    <%= render upvote %>
-    <%= render downvote %>
+    <%= render partial: "shared/votable", object: redditpost %>
   </span>
   <span class="user"><%= link_to redditpost.user.name, redditpost.user %></span>
   <span class="content">

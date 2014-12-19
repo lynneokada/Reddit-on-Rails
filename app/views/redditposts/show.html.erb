@@ -1,7 +1,7 @@
 <section>
   <%= render @redditpost %>
   <% if logged_in? %>
-    <%= form_for :comment, url: {controller: :comments, action: :new} do |f| %>
+    <%= form_for :comment, url: {controller: :comments, action: :create} do |f| %>
       <%= f.text_area :content, placeholder: "Post a new comment" %>
       <%= f.submit "Post comment" %>
     <% end %>
