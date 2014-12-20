@@ -15,7 +15,7 @@
       <%= link_to comment_link_text, redditpost %> 
     </span>
     <span class="timestamp">
-      posted <%= time_ago_in_words(redditpost.created_at) %> ago.
+      <%= time_ago_in_words(redditpost.created_at) %> ago
       <% if current_user?(redditpost.user) %>
       <%= link_to "delete", redditpost, method: :delete, data: { confirm: "Are you sure?" } %>
       <% end %>

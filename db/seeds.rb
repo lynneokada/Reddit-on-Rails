@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create!(name: "Example User",
-email: "example@example.com",
-password: "example",
-password_confirmation: "example")
+             email: "example@example.com",
+             password: "example",
+             password_confirmation: "example")
 
 99.times do |n|
   name = Faker::Name.name
@@ -20,12 +20,14 @@ password_confirmation: "example")
   password_confirmation: password)
 end
 
+Subreddit.create!(name: "main")
+
 # Redditposts
 users = User.all
 50.times do |n|
   title = "outside? #{n} wow i got high score?"
   content = "http://www.reddit.com/r/outside"
-  redditpost = users.sample.redditposts.create(content: content, title: title)
+  redditpost = users.sample.redditposts.create(content: content, title: title, subreddit_id: Subreddit.first.id)
   redditpost.score = 0
   redditpost.save
 end
