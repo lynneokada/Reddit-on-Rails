@@ -1,4 +1,4 @@
-<%= form_for @redditpost do |f| %>
+<%= form_for redditpost do |f| %>
   <%= render 'shared/error_message', object: f.object %>
   <div class="field">
     <%= f.text_field :title, placeholder: "Title" %>

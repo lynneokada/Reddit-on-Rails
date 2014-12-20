@@ -24,8 +24,8 @@
 
   <% end %>
 <% else %>
-  <section class="redditpost_form">
-    <%= render 'shared/redditpost_form' %>
+  <section>
+    <%= render @subreddit %>
   </section>
   <ol class="redditposts">
     <%= render Redditpost.all %>

@@ -1,2 +1,4 @@
 <h1> <%= @subreddit.name %> </h1>
-<%= render Redditpost.where(subreddit_id: @subreddit.id) %>
+<%= render partial: 'shared/redditpost_form',
+           object: @subreddit.redditposts.build, 
+           as: 'redditpost' %>
